@@ -8,7 +8,7 @@ Function UnzipTool {
 		return $null
 	}
 
-	$outdir = Function_CreateInputBox -title "Output Directory" -description "Paste output directory location below" -default ""
+	$outdir = Function_FolderSelection -title "Output Directory" -basedir "C:/"
 	if ($outdir -eq $null) {
 		Write-Debug "User cancelled input"
 		return $null
