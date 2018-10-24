@@ -1,5 +1,5 @@
-# Demo function to show how the tool can be used
-# Asks user how their eggs like to be cooked
+# Basic unzip tool
+# Will extract an input file to an output directory
 
 Function UnzipTool {
 	$infile = Function_CreateInputBox -title "Input File" -description "Paste input file location below" -default ""
