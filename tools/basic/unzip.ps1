@@ -1,8 +1,6 @@
 # Demo function to show how the tool can be used
 # Asks user how their eggs like to be cooked
 
-Add-Type -AssemblyName System.IO.Compression.FileSystem
-
 Function UnzipTool {
 	$infile = Function_CreateInputBox -title "Input File" -description "Paste input file location below" -default ""
 	if ($infile -eq $null) {

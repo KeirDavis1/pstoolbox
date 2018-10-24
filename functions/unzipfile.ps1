@@ -3,6 +3,8 @@
 # `in` = File
 # `out` = Destination folder
 
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+
 Function Function_Unzip_File
 {
 	Param
