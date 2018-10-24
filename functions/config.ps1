@@ -32,7 +32,7 @@ Function Function_GetDataOrDefault
 	(
 		[Parameter(Mandatory=$true)]
 		[string] $key,
-		[Parameter(Mandatory=$true)]
+		[Parameter(Mandatory=$false)]
 		[string] $default
 	)
 	if (-Not (Test-Path "config/$key.blob")){

@@ -10,7 +10,7 @@ Function DemonstrationTool {
 		return;
 	}
 
-	Function_SaveData -key $key -value $response	
+	Function_SaveData -key $key -value $response
 	Write-Host "User likes their eggs $response"
 }
 
