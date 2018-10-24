@@ -1,18 +1,18 @@
-# Stores and retrieves data based on a GUID
+# Stores and retrieves data based on a key
 
-Function Function_StoreData
+Function Function_SaveData
 {
 	Param
 	(
 		[Parameter(Mandatory=$true)]
-		[GUID] $guid,
+		[string] $key,
 		[Parameter(Mandatory=$true)]
-		[string] $string
+		[string] $value
 	)
 	if (-Not (Test-Path "config")){
 		New-Item -ItemType 'directory' -Path "config" -Force | Out-Null
 	}
-	$string | Out-File "config/$guid.blob"
+	$value | Out-File "config/$key.blob"
 }
 
 Function Function_GetData
@@ -20,10 +20,23 @@ Function Function_GetData
 	Param
 	(
 		[Parameter(Mandatory=$true)]
-		[GUID] $guid
+		[string] $key
 	)
-	if (-Not (Test-Path "config/$guid.blob")){
-		return $null
+	return Function_GetDataOrDefault -key $key -default $null
+}
+
+
+Function Function_GetDataOrDefault
+{
+	Param
+	(
+		[Parameter(Mandatory=$true)]
+		[string] $key,
+		[Parameter(Mandatory=$true)]
+		[string] $default
+	)
+	if (-Not (Test-Path "config/$key.blob")){
+		return $default
 	}
-	return Get-Content "config/$guid.blob"
+	return Get-Content "config/$key.blob"
 }

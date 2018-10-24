@@ -2,7 +2,15 @@
 # Asks user how their eggs like to be cooked
 
 Function DemonstrationTool {
-	$response = Function_CreateInputBox -title "This is a demo" -description "How do you like your eggs?" -default "fried"
+	$key = 'demoquestion'
+	$defaultResponse = Function_GetDataOrDefault -key $key -default 'fried'
+
+	$response = Function_CreateInputBox -title "This is a demo" -description "How do you like your eggs?" -default $defaultResponse
+	if ($response -eq $null){
+		return;
+	}
+
+	Function_SaveData -key $key -value $response	
 	Write-Host "User likes their eggs $response"
 }
 
