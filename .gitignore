@@ -1,3 +1,4 @@
 # Hide company related functions and tools
 functions/company/*
 tools/company/*
+config/*
