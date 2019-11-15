@@ -99,6 +99,7 @@ Function Render_Tool($toolName) {
 		if (
 			$_.Type -eq "list"
 		) {
+			Apply_Model_Values $($_.Name) $($_.DefaultValue)
 			$TempList = New-Object system.Windows.Forms.ListBox
 			$TempList.text = "List Box"
 			$TempList.Name = $_.Name
@@ -163,6 +164,8 @@ Function Render_Gui() {
 
 	$Form.controls.Add($ToolPanel)
 	$Form.TopMost = $True;
+	$Form.ShowInTaskbar = $True;
+	$form.ShowIcon = $False;
 	$Form.ShowDialog()
 
 	return $Form;
