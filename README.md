@@ -8,8 +8,8 @@ PS1 files in the tools folder will be listed in the toolbox listing on applicati
 
 PS1 files in the functions folder will not be listed by callable by the tools in the toolbox.
 
-Tools & functions can be put into sub-directories to categorise them as you see fit. It does 
-a recursive include on the tools & functions. 
+Tools & functions can be put into sub-directories to categorise them as you see fit. It does
+a recursive include on the tools & functions.
 
 ## Additions
 
